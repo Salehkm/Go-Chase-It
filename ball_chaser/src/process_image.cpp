@@ -34,8 +34,9 @@ void process_image_callback(const sensor_msgs::Image img)
     int white_pixel = 255;
 
 
-    for (int i = 0; i < img.height * img.step; i++) {
-        if (img.data[i]== white_pixel) {
+
+    for (int i = 0; i < img.height * img.step; i+=3) {
+        if (img.data[i]== white_pixel && img.data[i+1]== white_pixel && img.data[i+2]== white_pixel ) {
             index =i%img.step;
             if (index<img.step/3){
             position=left; //Left
