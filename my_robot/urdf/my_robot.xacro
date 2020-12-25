@@ -46,6 +46,7 @@
     <axis xyz="0 1 0" rpy="0 0 0"/>
   </joint>
 
+
 <link name='hokuyo'>
 
     <inertial>
@@ -212,6 +213,14 @@
     </visual>
 
   </link>
-
+  <gazebo reference="left_wheel">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="chassis">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="right_wheel">
+    <material>Gazebo/Green</material>
+  </gazebo>
 </robot>
 
